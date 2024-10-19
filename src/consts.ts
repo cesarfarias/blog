@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  TITLE: "Cesar's AI-Narrated Life Journal",
+  DESCRIPTION: "An experimental blog where AI narrates the life of a Brazilian adventurer in Dubai.",
 };
 
 export const BLOG: Metadata = {
