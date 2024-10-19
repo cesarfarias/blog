@@ -1,64 +1,28 @@
-![Astro Nano](_astro_nano.png)
+# Cesar's AI-Narrated Life Journal
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+Welcome to the repository of my experimental life journal! This blog is a unique experiment where everything is written via AI. I use the Voicenotes app to record my entries, and an AI writer listens to them, narrating my life as a third-person observer.
 
-Built with Astro, Tailwind and Typescript, an no frameworks.
+## About Me
 
-It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+I'm a 32-year-old Brazilian currently living in Dubai. My life is an adventure, and I love sharing it through this AI-powered narrative.
 
-## 🚀 Deploy your own
+## The Blog
 
-[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
+This repository contains the source code for my personal blog. The blog itself can be accessed at [guri.blog](https://guri.blog).
 
-## 📋 Features
+## Features
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
+- AI-generated content based on voice notes
+- Third-person narrative of my daily life and adventures
+- Insights into the life of a Brazilian expat in Dubai
 
-## 💯 Lighthouse score
-![Astro Nano Lighthouse Score](_lighthouse.png)
+## Visit the Blog
 
-## 🕊️ Lightweight
-No frameworks or added bulk
+To read my latest adventures and experiences, please visit [guri.blog](https://guri.blog).
 
-## ⚡︎ Fast
-Rendered in ~40ms on localhost
+## Connect With Me
 
-## 📄 Configuration
+- Instagram: [@guriboy007](https://www.instagram.com/guriboy007)
+- Current Location: [cesar.is](http://cesar.is)
 
-The blog posts on the demo serve as the documentation and configuration.
-
-## 💻 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run dev:network`     | Starts local dev server on local network         |
-| `npm run sync`            | Generates TypeScript types for all Astro modules.|
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run preview:network` | Preview build on local network                   |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-| `npm run lint`            | Run ESLint                                       |
-| `npm run lint:fix`        | Auto-fix ESLint issues                           |
-
-## 🏛️ License
-
-MIT
+Thank you for your interest in my AI-narrated life journal!
