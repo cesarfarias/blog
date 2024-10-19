@@ -1,7 +1,7 @@
 ---
 title: "Balancing Growth Amidst Professional Storms"
 description: "Cesar balances personal growth, professional challenges, and new relationships amid uncertainty."
-date: "2024-10-19"
+date: "2024-09-23"
 draft: false
 ---
 
