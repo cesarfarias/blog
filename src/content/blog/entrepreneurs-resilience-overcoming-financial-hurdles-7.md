@@ -1,7 +1,7 @@
 ---
 title: "Entrepreneur's Resilience: Overcoming Financial Hurdles"
 description: "Entrepreneur navigates financial challenges while finding personal growth and contentment."
-date: "2024-10-19"
+date: "2024-09-27"
 draft: false
 ---
 
