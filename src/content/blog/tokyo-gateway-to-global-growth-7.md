@@ -1,7 +1,7 @@
 ---
 title: "Tokyo: Gateway to Global Growth"
 description: "Traveler's journey: Tokyo adventure sparks personal and professional growth."
-date: "2024-10-19"
+date: "2024-07-31"
 draft: false
 ---
 
