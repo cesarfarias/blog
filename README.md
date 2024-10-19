@@ -1,6 +1,6 @@
 # Cesar's AI-Narrated Life Journal
 
-Welcome to the repository of my experimental life journal! This blog is a unique experiment where everything is written via AI. I use the Voicenotes app to record my entries, and an AI writer listens to them, narrating my life as a third-person observer.
+Welcome to the repository of my experimental life journal! This blog is a unique experiment where everything is written via AI. I use the [Voicenotes app](https://voicenotes.com/?via=guriblog) to record my entries, and an AI writer listens to them, narrating my life as a third-person observer.
 
 ## About Me
 
