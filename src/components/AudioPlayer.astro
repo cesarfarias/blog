@@ -1,0 +1,109 @@
+---
+type Props = {
+  src: string;
+  title?: string;
+};
+
+const { src, title } = Astro.props;
+// Allow either "audio/foo.mp3" or "/audio/foo.mp3" in frontmatter.
+const audioSrc = src.startsWith("/") || src.startsWith("http") ? src : `/${src}`;
+---
+
+<div
+  class="audio-player not-prose flex items-center gap-4 rounded-xl border border-black/10 dark:border-white/15 bg-black/[0.02] dark:bg-white/[0.03] px-4 py-3"
+  data-audio-player
+>
+  <audio src={audioSrc} preload="metadata" data-audio></audio>
+
+  <button
+    type="button"
+    aria-label="Play"
+    data-toggle
+    class="flex-none flex items-center justify-center size-10 rounded-full bg-black dark:bg-white text-white dark:text-black transition-transform hover:scale-105 active:scale-95"
+  >
+    <svg data-icon-play class="size-4 translate-x-px" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+    <svg data-icon-pause class="size-4 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+    </svg>
+  </button>
+
+  <div class="flex-1 min-w-0">
+    <div class="flex items-center justify-between gap-2 mb-1.5">
+      <span class="text-sm font-medium text-black dark:text-white truncate">
+        {title ?? "Listen to this post"}
+      </span>
+      <span class="flex-none text-xs tabular-nums text-black/50 dark:text-white/50">
+        <span data-current>0:00</span> / <span data-duration>0:00</span>
+      </span>
+    </div>
+    <div
+      data-seek
+      class="group relative h-1.5 w-full cursor-pointer rounded-full bg-black/10 dark:bg-white/15"
+    >
+      <div
+        data-progress
+        class="absolute inset-y-0 left-0 w-0 rounded-full bg-black dark:bg-white"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function formatTime(seconds: number): string {
+    if (!isFinite(seconds) || seconds < 0) seconds = 0;
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return `${m}:${s.toString().padStart(2, "0")}`;
+  }
+
+  function setupPlayer(root: HTMLElement) {
+    const audio = root.querySelector("[data-audio]") as HTMLAudioElement;
+    const toggle = root.querySelector("[data-toggle]") as HTMLButtonElement;
+    const iconPlay = root.querySelector("[data-icon-play]") as SVGElement;
+    const iconPause = root.querySelector("[data-icon-pause]") as SVGElement;
+    const current = root.querySelector("[data-current]") as HTMLElement;
+    const duration = root.querySelector("[data-duration]") as HTMLElement;
+    const progress = root.querySelector("[data-progress]") as HTMLElement;
+    const seek = root.querySelector("[data-seek]") as HTMLElement;
+    if (!audio || !toggle) return;
+
+    const setPlayingUI = (playing: boolean) => {
+      iconPlay.classList.toggle("hidden", playing);
+      iconPause.classList.toggle("hidden", !playing);
+      toggle.setAttribute("aria-label", playing ? "Pause" : "Play");
+    };
+
+    toggle.addEventListener("click", () => {
+      // Pause any other player on the page first.
+      document.querySelectorAll("[data-audio]").forEach((el) => {
+        if (el !== audio) (el as HTMLAudioElement).pause();
+      });
+      if (audio.paused) audio.play();
+      else audio.pause();
+    });
+
+    audio.addEventListener("play", () => setPlayingUI(true));
+    audio.addEventListener("pause", () => setPlayingUI(false));
+    audio.addEventListener("ended", () => setPlayingUI(false));
+
+    audio.addEventListener("loadedmetadata", () => {
+      duration.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      current.textContent = formatTime(audio.currentTime);
+      const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+      progress.style.width = `${pct}%`;
+    });
+
+    seek.addEventListener("click", (e) => {
+      const rect = seek.getBoundingClientRect();
+      const ratio = Math.min(Math.max((e.clientX - rect.left) / rect.width, 0), 1);
+      if (audio.duration) audio.currentTime = ratio * audio.duration;
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-audio-player]").forEach(setupPlayer);
+</script>

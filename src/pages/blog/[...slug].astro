@@ -5,6 +5,7 @@ import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
+import AudioPlayer from "@components/AudioPlayer.astro";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("blog"))
@@ -42,6 +43,11 @@ const { Content } = await post.render();
         {post.data.title}
       </div>
     </div>
+    {post.data.audio && (
+      <div class="animate mb-10">
+        <AudioPlayer src={post.data.audio} title={post.data.title} />
+      </div>
+    )}
     <article class="animate">
       <Content />
     </article>
