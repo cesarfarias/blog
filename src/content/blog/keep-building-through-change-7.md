@@ -3,7 +3,7 @@ title: "Keep Building Through Change"
 description: "Cesar reflects on relocation, recovery, business challenges, and growth."
 date: "2026-05-27"
 draft: false
-audio: "audio/keep-building-through-change.mp3"
+audio: "audio/keep-building-through-change-7.mp3"
 ---
 
 More than half a year had passed since Cesar last sat down to record his thoughts. In that time, life had done what it always does: moved forward without asking permission, carrying with it unexpected turns, quiet victories, disappointments, lessons, and the steady accumulation of experiences that only become visible when viewed in retrospect.
