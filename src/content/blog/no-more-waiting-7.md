@@ -1,7 +1,7 @@
 ---
 title: "No More Waiting"
 description: "Year-end reflection on business setbacks, ambition, and decisive action."
-date: "2026-06-09"
+date: "2025-12-30"
 draft: false
 ---
 

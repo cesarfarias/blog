@@ -1,7 +1,7 @@
 ---
 title: "Keep Building Through Change"
 description: "Cesar reflects on relocation, recovery, business challenges, and growth."
-date: "2026-06-09"
+date: "2026-05-27"
 draft: false
 ---
 
