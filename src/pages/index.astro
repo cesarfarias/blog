@@ -11,6 +11,18 @@ const blog = (await getCollection("blog"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
 
+const calculateAge = (birthDate: Date) => {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
+
+const age = calculateAge(new Date(1992, 0, 19));
+
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -27,7 +39,7 @@ const blog = (await getCollection("blog"))
             AI writer listens to them, narrating my life as a third-person observer.
           </p>
           <p class="animate">
-            I'm a 32-year-old Brazilian currently living in Dubai. My life is an adventure, 
+            I'm a {age}-year-old Brazilian currently living in Dubai. My life is an adventure,
             and I love sharing it through this AI-powered narrative. If you're curious about 
             where I am now or my future travels, check out <Link href="http://cesar.is" external>cesar.is</Link>.
           </p>
